@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Password Length Indicator
 // @namespace    trockenasche
-// @version      1.0
+// @version      1.1
 // @description  Indicate password fields that have a maximum length of characters.
 // @author       trockenasche
 // @homepage     https://github.com/trockenasche/US-Password-Length-Indicator
@@ -9,7 +9,7 @@
 // @updateURL    https://github.com/trockenasche/US-Password-Length-Indicator/raw/main/Password_Length_Indicator.user.js
 // @downloadURL  https://github.com/trockenasche/US-Password-Length-Indicator/raw/main/Password_Length_Indicator.user.js
 // @include      *
-// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Three_asterisks.svg/32-Three_asterisks.svg.png
+// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Three_asterisks.svg/32px-Three_asterisks.svg.png
 // @grant        none
 // @run-at       document-idle
 // @license      MIT
