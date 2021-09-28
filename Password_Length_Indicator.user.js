@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Password Length Indicator
 // @namespace    trockenasche
-// @version      2.0
+// @version      3.0
 // @description  Indicate password fields that have a maximum length of characters.
 // @author       trockenasche
 // @homepage     https://github.com/trockenasche/US-Password-Length-Indicator
@@ -26,6 +26,18 @@ function addGlobalStyle(css) {
     head.appendChild(style);
 }
 
+function removeMaxLength() {
+    var passFields = document.querySelectorAll("input[type='password']");
+    [].forEach.call(passFields, function (passField) {
+        passField.removeAttribute("maxLength");
+        passField.style.border = "0px";
+    })
+    var spans = document.querySelectorAll("span.us-pli-span");
+    [].forEach.call(spans, function (span) {
+        span.remove();
+    });
+}
+
 (function () {
     'use strict';
     var passFields = document.querySelectorAll("input[type='password']");
@@ -41,16 +53,26 @@ function addGlobalStyle(css) {
                     flex-direction: row;
                     width: 100%;
                     align-content: flex-end;}`);
-    addGlobalStyle(`div.us-pli>span
-                    { padding: 0px 1px;
+    addGlobalStyle(`div.us-pli>span {
+                    padding: 0px 1px;
+                    background: coral;
+                    border: 1px solid coral;
+                    align-self: center;
+                    border-radius: 0px 5px 5px 0px;`);
+    addGlobalStyle(`a.us-pli-button {
+                    color: white;
+                    font-family: Verdana, Arial, Helvetica, sans-serif;
+                    font-size: 0.9em;
+                    text-decoration: none;
+                    }`);
+    addGlobalStyle(`a.us-pli-button:hover {
                     color: red;
-                    background: yellow;
-                    border: 1px solid yellow;
-                    align-self: center;`);
+                    text-decoration: line-through;
+                    }`);
 
     [].forEach.call(passFields, function (passField) {
         if (passField.maxLength > 0) {
-            passField.style.border = "2px solid yellow";
+            passField.style.border = "2px solid coral";
 
             // Add the div before the input field.
             var wrapper = document.createElement('div');
@@ -60,9 +82,16 @@ function addGlobalStyle(css) {
             wrapper.appendChild(passField);
 
             // Add the span element with the maxLength value at the end of the input element.
-            passField.insertAdjacentHTML('afterend', '<span>' + passField.maxLength + '</span>');
+            passField.insertAdjacentHTML('afterend', '<span class="us-pli-span"><a href="javascript:void\(0\)" class="us-pli-button" title="remove limit!"> ' + passField.maxLength + '</a></span>');
         }
     });
+
+    var usPliButtons = document.querySelectorAll("a.us-pli-button");
+    if (usPliButtons.length > 0) {
+        [].forEach.call(usPliButtons, function (usPliButton) {
+            usPliButton.addEventListener("click", removeMaxLength);
+        });
+    }
 
     return;
 })
