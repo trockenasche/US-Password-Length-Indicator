@@ -32,9 +32,9 @@ function removeMaxLength() {
         passField.removeAttribute("maxLength");
         passField.style.border = "0px";
     })
-    var spans = document.querySelectorAll("span.us-pli-span");
-    [].forEach.call(spans, function (span) {
-        span.remove();
+    var divs = document.querySelectorAll("div.us-pli-div");
+    [].forEach.call(divs, function (div) {
+        div.remove();
     });
 }
 
@@ -52,18 +52,22 @@ function removeMaxLength() {
                     display: flex;
                     flex-direction: row;
                     width: 100%;
-                    align-content: flex-end;}`);
-    addGlobalStyle(`div.us-pli>span {
+                    align-content: flex-end;
+                    }`);
+    addGlobalStyle(`div.us-pli>div {
                     padding: 0px 1px;
                     background: coral;
                     border: 1px solid coral;
-                    align-self: center;
-                    border-radius: 0px 5px 5px 0px;`);
+                    justify-content: center;
+                    display: flex;
+                    border-radius: 0px 5px 5px 0px;
+                    }`);
     addGlobalStyle(`a.us-pli-button {
                     color: white;
                     font-family: Verdana, Arial, Helvetica, sans-serif;
                     font-size: 0.9em;
                     text-decoration: none;
+                    align-self: center;
                     }`);
     addGlobalStyle(`a.us-pli-button:hover {
                     color: red;
@@ -81,8 +85,8 @@ function removeMaxLength() {
             // And move the input field inside the div element.
             wrapper.appendChild(passField);
 
-            // Add the span element with the maxLength value at the end of the input element.
-            passField.insertAdjacentHTML('afterend', '<span class="us-pli-span"><a href="javascript:void\(0\)" class="us-pli-button" title="remove limit!"> ' + passField.maxLength + '</a></span>');
+            // Add the div element with the maxLength value at the end of the input element.
+            passField.insertAdjacentHTML('afterend', '<div class="us-pli-div"><a href="javascript:void\(0\)" class="us-pli-button" title="remove limit!"> ' + passField.maxLength + '</a></div>');
         }
     });
 
