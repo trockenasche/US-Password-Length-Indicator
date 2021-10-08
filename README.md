@@ -6,7 +6,7 @@ It is also possible to remove the maxLength attribute from all input fields.
 
 Tested with [![Firefox](https://badgen.net/badge/icon/firefox?icon=firefox&label)](https://firefox.com)
 - [Tampermonkey](https://www.tampermonkey.net/)
-- [Violent Moneky](https://addons.mozilla.org/firefox/addon/violentmonkey)
+- [Violentmoneky](https://addons.mozilla.org/firefox/addon/violentmonkey)
 
 [Click to install](Password_Length_Indicator.user.js?raw=1)
 
