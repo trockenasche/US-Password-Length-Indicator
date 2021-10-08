@@ -4,7 +4,9 @@ I have written a UserScript which shows if a password field has a character limi
 If an external password manager generates a password that is too long, it would be cut off unrecognisably when it is inserted. With this, it can be easily recognised.
 It is also possible to remove the maxLength attribute from all input fields.
 
-Tested with Firefox and [Tampermonkey](https://www.tampermonkey.net/)
+Tested with [![Firefox](https://badgen.net/badge/icon/firefox?icon=firefox&label)](https://firefox.com)
+- [Tampermonkey](https://www.tampermonkey.net/)
+- [Violent Moneky](https://addons.mozilla.org/firefox/addon/violentmonkey)
 
 [Click to install](Password_Length_Indicator.user.js?raw=1)
 
