@@ -5,25 +5,43 @@
     <meta charset="utf-8">
     <title>UserScript Password Length Indicator - Test Page</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <style>
+        .password {
+            border-color: green;
+            border-style: dashed;
+        }
+    </style>
 </head>
 
 <body style="background: darkgray;">
-    <table width="400">
+    <table width="600">
         <tr>
-            <td>Password without<br>"maxlength":</td>
+            <th>Password field</th>
+        </tr>
+        <tr>
+            <td>Without "maxlength":</td>
             <td><input type="password"></td>
         </tr>
         <tr>
-            <td>Password with<br>"maxlength=23":</td>
+            <td>With "maxlength=23":</td>
             <td><input type="password" maxlength="23"></td>
         </tr>
         <tr>
-            <td>Password with<br>"maxlength=23" and height:50px:</td>
+            <td>With "maxlength=23" and height:50px:</td>
             <td><input type="password" maxlength="23" style="height:50px"></td>
         </tr>
         <tr>
-            <td>Password with<br>"maxlength=42" and height:30px:</td>
+            <td>With "maxlength=42" and height:30px:</td>
             <td><input type="password" maxlength="42" style="height:30px"></td>
+        </tr>
+        <tr>
+            <td>With "maxlength=42" and border style <span style="color: blue;">blue</span> inside the tag </td>
+            <td><input type="password" maxlength="42" style="border-color: blue; border-style: double;"></td>
+        </tr>
+        <tr>
+            <td>With "maxlength=42" and border style <span style="color: green;">green</span> via css</td>
+            <td><input type="password" maxlength="42" class="password"></td>
         </tr>
     </table>
 </body>
