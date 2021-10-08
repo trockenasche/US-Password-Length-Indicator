@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Password Length Indicator
 // @namespace    trockenasche
-// @version      3.1
+// @version      3.2
 // @description  Indicate password fields that have a maximum length of characters.
 // @author       trockenasche
 // @homepage     https://github.com/trockenasche/US-Password-Length-Indicator
@@ -30,7 +30,7 @@ function removeMaxLength() {
     var passFields = document.querySelectorAll("input[type='password']");
     [].forEach.call(passFields, function (passField) {
         passField.removeAttribute("maxLength");
-        passField.style.border = "0px";
+        passField.style.border = "";
     })
     var divs = document.querySelectorAll("div.us-pli-div");
     [].forEach.call(divs, function (div) {
