@@ -11,6 +11,7 @@ Tested with [![Firefox](https://badgen.net/badge/icon/firefox?icon=firefox&label
 [Click to install](Password_Length_Indicator.user.js?raw=1)
 
 You can test it at [https://trockenasche.github.io/US-Password-Length-Indicator/](https://trockenasche.github.io/US-Password-Length-Indicator/)
-![grafik](https://user-images.githubusercontent.com/2905450/135172816-eaf065ea-55ac-407a-810b-d417f502992f.png)
+![grafik](https://user-images.githubusercontent.com/2905450/136622643-ba7d22e4-b216-4020-b1b1-73edc39b1be9.png)
+
 
 
